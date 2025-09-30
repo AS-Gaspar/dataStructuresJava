@@ -4,9 +4,12 @@ public class Main {
     public static void main(String[] args) {
         LinkedList newList = new LinkedList(4);
         newList.append(2);
-        System.out.println(newList.removeLast().value);
-        System.out.println(newList.removeLast());
-        System.out.println(newList.removeLast());
+        newList.append(10);
+        newList.append(5);
+        System.out.println(newList.remove(0).value);
+
+
+        newList.printList();
 
         /*
         newList.getHead();
