@@ -6,9 +6,7 @@ public class Main {
         newList.append(2);
         newList.append(10);
         newList.append(5);
-        System.out.println(newList.remove(0).value);
-
-
+        System.out.println(newList.findMiddleNode().value);
         newList.printList();
 
         /*

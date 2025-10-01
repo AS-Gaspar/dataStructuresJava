@@ -88,6 +88,7 @@ public class LinkedList {
         return temp;
     }
 
+
     public boolean set(int index, int value) {
         Node temp = get(index);
         if (temp != null) {
@@ -138,7 +139,7 @@ public class LinkedList {
         return remove;
     }
 
-    public Node reverse() {
+    public void reverse() {
         Node temp = head;
         head = tail;
         tail = temp;
@@ -146,29 +147,43 @@ public class LinkedList {
         Node before = null;
 
         for (int i = 0; i < length; i++) {
-            after.next = temp;
+            after = temp.next;
             temp.next = before;
             before = temp;
             temp = after;
         }
     }
 
+    public Node findMiddleNode() {
+        if (head == null) return null;
+        if (head == tail) return head;
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast != tail) {
+            fast = fast.next;
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return slow;
+    }
+
     public void printList() {
         Node temp = head;
         while (temp != null) {
-            System.out.print(temp.value + " -> ");
+            System.out.println(temp.value);
             temp = temp.next;
         }
     }
 
-    public void getHead() {
-        System.out.println("Head: " + head.value);
-    }
-    public void getTail() {
-        System.out.println("Tail: " + tail.value);
-    }
-    public void getLength() {
-        System.out.println("Length: " + length);
+    public Node getHead() {
+        return head;
     }
 
+    public Node getTail() {
+        return tail;
+    }
+
+    public int getLength() {
+        return length;
+    }
 }
