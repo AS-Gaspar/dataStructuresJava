@@ -167,6 +167,23 @@ public class LinkedList {
         return slow;
     }
 
+    public Node findKthFromEnd(int k) {
+        if (k == 0) return null;
+        Node slow = head;
+        Node fast = head;
+        int ac = 0;
+        while (fast != null) {
+            fast = fast.next;
+            ac++;
+        }
+        if (k > ac) return null;
+        int steps = ac - k;
+        for (int i = 0; i < steps; i++) {
+            slow = slow.next;
+        }
+        return slow;
+    }
+
     public void printList() {
         Node temp = head;
         while (temp != null) {
