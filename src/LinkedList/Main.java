@@ -6,14 +6,8 @@ public class Main {
         newList.append(2);
         newList.append(10);
         newList.append(5);
-        System.out.println(newList.findMiddleNode().value);
+        newList.append(4);
+        newList.removeDuplicates();
         newList.printList();
-
-        /*
-        newList.getHead();
-        newList.getTail();
-        newList.getLength();
-        newList.printList();
-         */
     }
 }

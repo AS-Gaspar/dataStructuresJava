@@ -1,4 +1,6 @@
 package LinkedList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class LinkedList {
     private Node head;
@@ -182,6 +184,23 @@ public class LinkedList {
             slow = slow.next;
         }
         return slow;
+    }
+
+    public void removeDuplicates() {
+        Set<Integer> numbers = new HashSet<>();
+        Node walker = head;
+        Node prev = head;
+        for(int i = 0; i < length; i++) {
+            boolean add = numbers.add(walker.value);
+            if (add == false) {
+                prev.next = walker.next;
+                walker.next = null;
+                walker = prev.next;
+            } else {
+                prev = walker;
+                walker = walker.next;
+            }
+        }
     }
 
     public void printList() {
